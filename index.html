@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><style id='brand'>:root{
+  --bg:#0b0b0c; --surface:#141417; --surface-2:#1c1c21;
+  --fg:#f5f5f7; --fg-muted:#a1a1aa; --border:#26262b;
+  --accent:#3b82f6; --accent-fg:#fff; --radius:14px; --maxw:1100px;
+  --font:'Inter',system-ui,-apple-system,Segoe UI,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--fg);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.container{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.section{padding:96px 0}
+.hero{padding:140px 0 90px;text-align:center}
+h1{font-size:clamp(2.5rem,6vw,4.5rem);line-height:1.05;letter-spacing:-.02em}
+h2{font-size:clamp(1.8rem,4vw,2.8rem);letter-spacing:-.01em}
+.muted{color:var(--fg-muted)}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:var(--accent-fg);padding:14px 28px;border-radius:var(--radius);font-weight:600;text-decoration:none;border:0;cursor:pointer;transition:transform .15s ease,opacity .15s ease}
+.btn:hover{transform:translateY(-2px);opacity:.92}
+.btn-ghost{background:transparent;color:var(--fg);border:1px solid var(--border)}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:28px}
+.grid{display:grid;gap:24px}
+@media(max-width:640px){.section{padding:64px 0}.hero{padding:96px 0 64px}}
+</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GravityCart — The Sport. Engineered Downhill.</title>
+<style>
+  :root{
+    --accent: #ff4b1f;
+    --accent-2: #ffb199;
+    --steel: #8a8f98;
+    --line: rgba(255,255,255,0.08);
+  }
+  body{
+    background:
+      radial-gradient(ellipse at 20% -10%, rgba(255,75,31,0.12), transparent 45%),
+      var(--bg);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, sans-serif;
+  }
+  .mono{
+    font-family: "SF Mono", "Consolas", "Courier New", monospace;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  /* ---------- NAV ---------- */
+  .nav{
+    position: sticky; top:0; z-index: 50;
+    display:flex; align-items:center; justify-content:space-between;
+    padding: 18px 0;
+    backdrop-filter: blur(10px);
+    background: rgba(10,10,12,0.55);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-logo{
+    display:flex; align-items:center; gap:10px;
+    font-weight: 800; font-size: 1.15rem; letter-spacing: 0.02em;
+    color: var(--fg);
+  }
+  .nav-logo .dot{
+    width:10px; height:10px; border-radius:50%;
+    background: var(--accent);
+    box-shadow: 0 0 12px 2px var(--accent);
+  }
+  .nav-links{ display:flex; gap:28px; align-items:center; }
+  .nav-links a{
+    color: var(--fg-muted); text-decoration:none; font-size:0.88rem;
+    font-weight: 600; transition: color 0.2s;
+  }
+  .nav-links a:hover{ color: var(--fg); }
+
+  /* ---------- HERO ---------- */
+  .hero-wrap{
+    position: relative;
+    padding-top: 90px;
+    padding-bottom: 70px;
+    overflow: hidden;
+    border-bottom: 1px solid var(--line);
+  }
+  .hero-wrap::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,0.6), transparent 75%);
+    pointer-events:none;
+  }
+  .hero-grid{
+    position:relative; z-index:2;
+    display:grid; grid-template-columns: 1.1fr 0.9fr; gap: 50px;
+    align-items:center;
+  }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    color: var(--accent); font-size: 0.75rem; font-weight:700;
+    margin-bottom: 18px;
+  }
+  .eyebrow::before{
+    content:""; width:24px; height:2px; background: var(--accent);
+  }
+  h1.hero-title{
+    font-size: clamp(2.6rem, 5.2vw, 4.4rem);
+    line-height: 1.02; font-weight: 900; letter-spacing: -0.02em;
+    margin: 0 0 22px;
+    color: var(--fg);
+  }
+  h1.hero-title span{
+    color: var(--accent);
+    display:block;
+  }
+  .hero-sub{
+    font-size: 1.1rem; line-height:1.6; color: var(--fg-muted);
+    max-width: 480px; margin-bottom: 34px;
+  }
+  .hero-cta{ display:flex; gap:14px; flex-wrap:wrap; }
+  .btn.btn-accent{
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+    box-shadow: 0 8px 24px -6px rgba(255,75,31,0.55);
+  }
+  .btn.btn-accent:hover{ filter: brightness(1.08); transform: translateY(-2px); }
+  .btn-ghost{ transition: transform 0.2s, border-color 0.2s; }
+  .btn-ghost:hover{ transform: translateY(-2px); border-color: var(--accent); }
+
+  .hero-visual{
+    position:relative;
+    aspect-ratio: 1/1;
+    border-radius: var(--radius);
+    background:
+      radial-gradient(circle at 60% 30%, rgba(255,75,31,0.25), transparent 60%),
+      linear-gradient(160deg, #17181c, #0b0b0d 70%);
+    border: 1px solid var(--line);
+    display:flex; align-items:center; justify-content:center;
+    overflow:hidden;
+  }
+  .hero-visual svg{ width:78%; height:78%; }
+  .hero-visual .ring{
+    position:absolute; border-radius:50%; border:1px solid var(--line);
+  }
+  .ring.r1{ width:90%; height:90%; }
+  .ring.r2{ width:70%; height:70%; }
+  .badge-spec{
+    position:absolute; bottom:18px; left:18px; right:18px;
+    display:flex; justify-content:space-between;
+    font-size:0.68rem; color: var(--steel);
+    border-top: 1px solid var(--line); padding-top:10px;
+  }
+
+  /* ---------- MARQUEE STRIP ---------- */
+  .strip{
+    border-bottom: 1px solid var(--line);
+    background: var(--surface);
+    overflow:hidden;
+    white-space: nowrap;
+    padding: 14px 0;
+  }
+  .strip-track{
+    display:inline-flex;
+    gap: 48px;
+    animation: scroll-strip 26s linear infinite;
+  }
+  .strip-track span{
+    font-size: 0.78rem; color: var(--fg-muted);
+    display:inline-flex; align-items:center; gap:10px;
+  }
+  .strip-track span::before{
+    content:"◆"; color: var(--accent); font-size:0.6rem;
+  }
+  @keyframes scroll-strip{
+    from{ transform: translateX(0); }
+    to{ transform: translateX(-50%); }
+  }
+
+  /* ---------- FEATURES ---------- */
+  .section-head{
+    max-width: 640px; margin-bottom: 48px;
+  }
+  .section-head .eyebrow{ margin-bottom: 12px; }
+  .section-head h2{
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 800; letter-spacing:-0.01em; margin:0 0 12px;
+    color: var(--fg);
+  }
+  .section-head p{ color: var(--fg-muted); font-size: 1.02rem; line-height:1.6; }
+
+  .feat-card{
+    position: relative;
+    padding: 30px 26px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    opacity: 1;
+  }
+  .feat-card:hover{
+    transform: translateY(-6px);
+    border-color: rgba(255,75,31,0.4);
+    box-shadow: 0 20px 40px -20px rgba(0,0,0,0.6);
+  }
+  .feat-num{
+    font-family: monospace; font-size: 0.75rem; color: var(--accent);
+    margin-bottom: 18px; opacity: 0.9;
+  }
+  .feat-card h3{
+    font-size: 1.08rem; margin: 0 0 10px; color: var(--fg); font-weight:700;
+  }
+  .feat-card p{
+    font-size: 0.92rem; color: var(--fg-muted); line-height: 1.55; margin:0;
+  }
+
+  /* ---------- STATS / TECH ---------- */
+  .tech-section{
+    background: linear-gradient(180deg, rgba(255,75,31,0.05), transparent);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .stats-row{
+    display:grid; grid-template-columns: repeat(4,1fr);
+    gap: 30px;
+    text-align:center;
+  }
+  .stat{
+    padding: 20px 10px;
+    border-left: 1px solid var(--line);
+  }
+  .stat:first-child{ border-left:none; }
+  .stat .num{
+    font-size: clamp(1.8rem,3vw,2.6rem);
+    font-weight: 900; color: var(--fg);
+    display:block; margin-bottom: 6px;
+  }
+  .stat .num span{ color: var(--accent); }
+  .stat .lbl{ font-size: 0.78rem; color: var(--fg-muted); }
+
+  /* ---------- PRICING ---------- */
+  .price-card{
+    position:relative;
+    background: linear-gradient(150deg, #16171b, #0c0c0e);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 46px 40px;
+    display:grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items:center;
+    overflow:hidden;
+  }
+  .price-card::after{
+    content:"";
+    position:absolute; top:-40%; right:-10%;
+    width: 320px; height:320px; border-radius:50%;
+    background: radial-gradient(circle, rgba(255,75,31,0.22), transparent 70%);
+  }
+  .price-tag{
+    display:flex; align-items:baseline; gap:10px; margin: 6px 0 22px;
+  }
+  .price-tag .amount{ font-size: 2.6rem; font-weight:900; color: var(--fg); }
+  .price-tag .per{ color: var(--fg-muted); font-size:0.9rem; }
+  .price-list{ list-style:none; margin: 0 0 28px; padding:0; display:grid; gap:10px; }
+  .price-list li{
+    display:flex; align-items:center; gap:10px;
+    font-size: 0.92rem; color: var(--fg-muted);
+  }
+  .price-list li::before{
+    content:"✓"; color: var(--accent); font-weight:900;
+  }
+  .price-visual{
+    border-radius: calc(var(--radius) - 4px);
+    background: radial-gradient(circle at 40% 30%, rgba(255,75,31,0.3), transparent 60%), #0a0a0c;
+    border: 1px solid var(--line);
+    aspect-ratio: 4/3;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .price-visual svg{ width: 65%; }
+
+  /* ---------- FOOTER ---------- */
+  footer.site-footer{
+    border-top: 1px solid var(--line);
+    padding: 50px 0 26px;
+  }
+  .foot-grid{
+    display:grid; grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 30px; margin-bottom: 34px;
+  }
+  .foot-col h4{
+    font-size: 0.78rem; color: var(--fg); margin: 0 0 14px;
+    letter-spacing: 0.05em;
+  }
+  .foot-col a{
+    display:block; color: var(--fg-muted); text-decoration:none;
+    font-size: 0.86rem; margin-bottom: 10px; transition: color 0.2s;
+  }
+  .foot-col a:hover{ color: var(--accent); }
+  .foot-bottom{
+    display:flex; justify-content:space-between; align-items:center;
+    padding-top: 22px; border-top: 1px solid var(--line);
+    font-size: 0.78rem; color: var(--steel);
+    flex-wrap: wrap; gap: 10px;
+  }
+
+  /* reveal-on-scroll: CSS-only default visible, JS just adds a nicer transition */
+  .reveal{
+    opacity: 1;
+    transform: none;
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.pre-anim{
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  .reveal.in-view{
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (max-width: 880px){
+    .hero-grid{ grid-template-columns: 1fr; }
+    .hero-visual{ order:-1; max-width: 380px; margin: 0 auto; }
+    .stats-row{ grid-template-columns: repeat(2,1fr); }
+    .stat:nth-child(3){ border-left:none; }
+    .price-card{ grid-template-columns: 1fr; }
+    .foot-grid{ grid-template-columns: 1fr 1fr; }
+    .nav-links{ display:none; }
+  }
+</style>
+</head>
+<body>
+
+  <header class="container nav">
+    <div class="nav-logo"><span class="dot"></span> GRAVITYCART</div>
+    <nav class="nav-links">
+      <a href="#features">Engineering</a>
+      <a href="#specs">Specs</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#footer">Contact</a>
+    </nav>
+    <a href="#pricing" class="btn btn-accent" style="padding:9px 18px; font-size:0.85rem;">Request Quote</a>
+  </header>
+
+  <section class="hero-wrap">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow mono">New Technical Leader</div>
+        <h1 class="hero-title">GRAVITY,
+          <span>ENGINEERED.</span>
+        </h1>
+        <p class="hero-sub">
+          Built by automotive engineers, the GravityCart Sport fuses proven Downhill‑Bike braking technology
+          with CE‑certified, road‑legal construction — one cart, all seasons, zero compromise.
+        </p>
+        <div class="hero-cta">
+          <a href="#pricing" class="btn btn-accent">Configure Yours</a>
+          <a href="#features" class="btn btn-ghost">See the Engineering ↓</a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="ring r1"></div>
+        <div class="ring r2"></div>
+        <svg viewBox="0 0 200 200" fill="none">
+          <circle cx="60" cy="150" r="26" stroke="#ff4b1f" stroke-width="4"/>
+          <circle cx="150" cy="150" r="26" stroke="#8a8f98" stroke-width="4"/>
+          <path d="M60 150 L100 70 L150 150" stroke="#8a8f98" stroke-width="4" stroke-linecap="round"/>
+          <path d="M100 70 L110 40" stroke="#ff4b1f" stroke-width="6" stroke-linecap="round"/>
+          <rect x="70" y="110" width="45" height="16" rx="4" stroke="#8a8f98" stroke-width="3"/>
+        </svg>
+        <div class="badge-spec mono">
+          <span>Ø180MM DISC</span>
+          <span>CE CERTIFIED</span>
+          <span>STAINLESS FORK</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="strip">
+    <div class="strip-track mono" id="strip">
+      <span>Shimano Dual Brake System</span>
+      <span>CE &amp; ISO Certified</span>
+      <span>100% Recyclable Mono‑Material</span>
+      <span>All‑Season Ski Conversion</span>
+      <span>Automotive‑Grade Seat</span>
+      <span>Shimano Dual Brake System</span>
+      <span>CE &amp; ISO Certified</span>
+      <span>100% Recyclable Mono‑Material</span>
+      <span>All‑Season Ski Conversion</span>
+      <span>Automotive‑Grade Seat</span>
+    </div>
+  </div>
+
+  <section class="section" id="features">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow mono">Value Engineering</div>
+        <h2>Every part earns its place on the frame.</h2>
+        <p>The Sport was reverse‑engineered from existing concepts, then rebuilt with state‑of‑the‑art
+          solutions borrowed from automotive and downhill cycling — for a cart that's simple, safe, and built to last.</p>
+      </div>
+
+      <div class="grid" style="grid-template-columns: repeat(3, 1fr); gap:22px;">
+        <div class="feat-card reveal">
+          <div class="feat-num">01 / STRUCTURE</div>
+          <h3>Stainless Steel Fork</h3>
+          <p>An optimised steering fork absorbs shocks while holding its form — delivering confident handling
+             and a mount point for the towing device.</p>
+        </div>
+        <div class="feat-card reveal">
+          <div class="feat-num">02 / BRAKING</div>
+          <h3>Independent Dual Brakes</h3>
+          <p>Shimano Ø180mm cable‑actuated discs front and rear, fully independent — resistant to fade,
+             simple to maintain, unique in the market.</p>
+        </div>
+        <div class="feat-card reveal">
+          <div class="feat-num">03 / COMFORT</div>
+          <h3>Adjustable Seat</h3>
+          <p>Automotive‑inspired seating with a supportive backrest. 300mm longitudinal adjustment,
+             plus 100mm more via the seat rest — fits every rider.</p>
+        </div>
+        <div class="feat-card reveal">
+          <div class="feat-num">04 / VERSATILITY</div>
+          <h3>Wheels ↔ Skis</h3>
+          <p>Simple conversion between wheel and ski setups keeps the Sport running through every season,
+             on‑road or off.</p>
+        </div>
+        <div class="feat-card reveal">
+          <div class="feat-num">05 / FRAME</div>
+          <h3>Modular Aluminum Frame</h3>
+          <p>A central aluminum frame carries every critical component with direct linkage — simple access,
+             maximum stability.</p>
+        </div>
+        <div class="feat-card reveal">
+          <div class="feat-num">06 / COMPLIANCE</div>
+          <h3>CE &amp; ISO Certified</h3>
+          <p>Meets legal street‑operation requirements. No dangerous liquids, 100% recyclable
+             mono‑material components.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tech-section section" id="specs">
+    <div class="container">
+      <div class="section-head" style="margin-bottom:36px;">
+        <div class="eyebrow mono">By the Numbers</div>
+        <h2>Precision, measured.</h2>
+      </div>
+      <div class="stats-row">
+        <div class="stat">
+          <span class="num"><span>Ø180</span>mm</span>
+          <span class="lbl">Shimano Brake Discs</span>
+        </div>
+        <div class="stat">
+          <span class="num">300<span>mm</span></span>
+          <span class="lbl">Seat Adjustment Range</span>
+        </div>
+        <div class="stat">
+          <span class="num">1<span>0</span>0%</span>
+          <span class="lbl">Recyclable Materials</span>
+        </div>
+        <div class="stat">
+          <span class="num">2<span>×</span></span>
+          <span class="lbl">Modes — Wheels &amp; Skis</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="pricing">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow mono">The Offer</div>
+        <h2>One cart. Every configuration.</h2>
+        <p>The GravityCart Sport ships as a single, unsized platform — configured to your seat setup,
+           terrain, and season.</p>
+      </div>
+
+      <div class="price-card reveal">
+        <div>
+          <div class="mono" style="color:var(--accent); font-size:0.78rem; margin-bottom:10px;">GRAVITYCART SPORT</div>
+          <div class="price-tag">
+            <span class="amount">Request Quote</span>
+          </div>
+          <ul class="price-list">
+            <li>Stainless steel steering fork</li>
+            <li>Shimano independent dual disc brakes</li>
+            <li>Aluminum modular frame, one size fits all</li>
+            <li>Adjustable automotive‑style seat</li>
+            <li>Wheel &amp; ski conversion kit</li>
+            <li>CE / ISO certified, road‑legal</li>
+          </ul>
+          <a href="#footer" class="btn btn-accent">Talk to Engineering</a>
+        </div>
+        <div class="price-visual">
+          <svg viewBox="0 0 200 140" fill="none">
+            <circle cx="45" cy="105" r="22" stroke="#ff4b1f" stroke-width="4"/>
+            <circle cx="155" cy="105" r="22" stroke="#8a8f98" stroke-width="4"/>
+            <path d="M45 105 L90 45 L155 105" stroke="#8a8f98" stroke-width="4" stroke-linecap="round"/>
+            <path d="M90 45 L98 20" stroke="#ff4b1f" stroke-width="6" stroke-linecap="round"/>
+            <rect x="55" y="78" width="42" height="14" rx="4" stroke="#8a8f98" stroke-width="3"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer" id="footer">
+    <div class="container">
+      <div class="foot-grid">
+        <div class="foot-col">
+          <h4 class="mono">GRAVITYCART</h4>
+          <p class="muted" style="font-size:0.86rem; line-height:1.6; max-width:260px;">
+            Automotive‑engineered gravity carts. Designed for reliability, safety, and simplicity —
+            built to CE and ISO standard.
+          </p>
+        </div>
+        <div class="foot-col">
+          <h4 class="mono">Product</h4>
+          <a href="#features">Engineering</a>
+          <a href="#specs">Specifications</a>
+          <a href="#pricing">Pricing</a>
+        </div>
+        <div class="foot-col">
+          <h4 class="mono">Company</h4>
+          <a href="#">About</a>
+          <a href="#">Certifications</a>
+          <a href="#">Press</a>
+        </div>
+        <div class="foot-col">
+          <h4 class="mono">Contact</h4>
+          <a href="#">hello@gravitycart.example</a>
+          <a href="#">Dealer Network</a>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>© 2024 GravityCart. All rights reserved.</span>
+        <span>CE &amp; ISO Certified · Made for the road and beyond.</span>
+      </div>
+    </div>
+  </footer>
+
+<script>
+  // Subtle reveal-on-scroll enhancement (content is visible by default via CSS,
+  // this only upgrades to an animated entrance when supported).
+  (function(){
+    var items = document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){ return; }
+    items.forEach(function(el){ el.classList.add('pre-anim'); });
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('in-view');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    items.forEach(function(el){ obs.observe(el); });
+  })();
+
+  // Gentle tilt on hero visual
+  (function(){
+    var visual = document.querySelector('.hero-visual');
+    if(!visual) return;
+    visual.addEventListener('mousemove', function(e){
+      var r = visual.getBoundingClientRect();
+      var x = (e.clientX - r.left)/r.width - 0.5;
+      var y = (e.clientY - r.top)/r.height - 0.5;
+      visual.style.transform = 'rotateY(' + (x*8) + 'deg) rotateX(' + (y*-8) + 'deg)';
+    });
+    visual.addEventListener('mouseleave', function(){
+      visual.style.transform = 'rotateY(0) rotateX(0)';
+    });
+    visual.style.transition = 'transform 0.3s ease';
+    visual.style.transformStyle = 'preserve-3d';
+  })();
+
+  // Pause marquee on hover for readability
+  (function(){
+    var strip = document.getElementById('strip');
+    if(!strip) return;
+    strip.addEventListener('mouseenter', function(){ strip.style.animationPlayState = 'paused'; });
+    strip.addEventListener('mouseleave', function(){ strip.style.animationPlayState = 'running'; });
+  })();
+</script>
+
+</body>
+</html>
