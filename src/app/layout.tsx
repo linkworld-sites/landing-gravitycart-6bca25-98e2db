@@ -30,7 +30,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "GravityCart — Engineered Like a Car. Built for the Mountain.",
   description:
-    "GravityCart is a CE-certified, automotive-engineered gravity cart — dimensioned tolerances, proven brake components and mono-material recyclability, convertible between wheels and skis in under five minutes.",
+    "GravityCart is an automotive-engineered gravity cart — dimensioned tolerances, proven brake components and mono-material recyclability, convertible between wheels and skis in under five minutes.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -9,7 +9,7 @@ const ROWS = [
   { period: "2022", milestone: "Concept analysis", place: "Alpine test track" },
   { period: "2023", milestone: "Downhill-bike brake system adapted", place: "Shimano partnership" },
   { period: "2024", milestone: "Automotive seat engineering applied", place: "Tier-1 supplier" },
-  { period: "2025", milestone: "CE / ISO certification passed", place: "Notified body, EU" },
+  { period: "2025", milestone: "ISO certification passed", place: "Notified body, EU" },
   { period: "2026", milestone: "Serial production begins", place: "JM-001 onward" },
 ];
 

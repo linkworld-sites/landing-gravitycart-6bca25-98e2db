@@ -40,7 +40,7 @@ export function SplitCTA() {
                 For mountain operators
               </p>
               <h3 className="mt-4 font-display font-display-expanded text-[2.25rem] font-light leading-[0.95] text-white sm:text-[2.75rem]">
-                Fleet-grade, CE-certified, serviceable in minutes.
+                Fleet-grade, automotive-engineered, serviceable in minutes.
               </h3>
               <p className="mt-4 max-w-sm text-sm text-white/70">
                 Volume pricing, spare-parts logistics and on-site technician

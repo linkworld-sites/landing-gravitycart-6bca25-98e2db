@@ -26,8 +26,8 @@ export function NumbersBand() {
             Spec sheet &middot; JM-001
           </p>
           <p className="mt-3 text-sm text-white/70 md:text-base">
-            Every figure here is measured, not marketed — the ledger a CE
-            auditor would sign off on.
+            Every figure here is measured, not marketed — the ledger an
+            engineer would sign off on.
           </p>
         </FadeUp>
 
