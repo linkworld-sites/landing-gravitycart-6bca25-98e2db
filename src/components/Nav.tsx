@@ -4,9 +4,9 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 const LINKS = [
-  { href: "#bay", label: "Conversion Bay" },
-  { href: "#dossier", label: "Parts Dossier" },
-  { href: "#story", label: "Story" },
+  { href: "/#bay", label: "Conversion Bay" },
+  { href: "/#dossier", label: "Parts Dossier" },
+  { href: "/#story", label: "Story" },
   { href: "/product", label: "Shop" },
   { href: "/checkout", label: "Cart" },
   { href: "/blog", label: "Journal" },
@@ -27,7 +27,7 @@ export function Nav() {
           ))}
         </nav>
         <motion.a
-          href="#cta"
+          href="/#cta"
           whileHover={{ scale: 1.03, backgroundColor: "#ffffff", color: "#101214" }}
           whileTap={{ scale: 0.97 }}
           transition={{ duration: 0.12 }}

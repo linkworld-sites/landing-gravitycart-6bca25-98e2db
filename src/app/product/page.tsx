@@ -3,6 +3,7 @@ import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { CartProvider } from "@/components/CartContext";
 import { ProductGrid } from "@/components/shop/ProductGrid";
+import { CatalogCTA } from "@/components/shop/CatalogCTA";
 import { getProducts } from "@/lib/products";
 import { SITE_URL } from "@/lib/site";
 
@@ -52,14 +53,17 @@ export default async function ProductPage() {
           Catalog / JM Series
         </p>
         <h1 className="mt-4 font-display font-display-expanded text-4xl font-light text-white sm:text-5xl">
-          The chassis, and the kits that convert it.
+          One chassis. Wheels or skis in under five minutes.
         </h1>
         <p className="mt-4 max-w-2xl text-white/70">
-          One frame, engineered like a car. Spec the complete chassis or order the
-          interchangeable wheel and ski assemblies on their own — every part carries a
-          published tolerance and a CE certification.
+          Order the complete JM-001 chassis, or add the wheel and ski assemblies on
+          their own — every part ships to a published tolerance with CE certification,
+          so the fit is guaranteed the day it arrives.
         </p>
-        <div className="mt-12">
+        <div className="mt-8">
+          <CatalogCTA label="Start with the JM-001 chassis" href="#catalog" />
+        </div>
+        <div id="catalog" className="mt-12">
           <CartProvider>
             <ProductGrid products={products} />
           </CartProvider>

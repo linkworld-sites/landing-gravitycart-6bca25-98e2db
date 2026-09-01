@@ -7,7 +7,8 @@ export function Footer() {
         <p>GravityCart &copy; {new Date().getFullYear()}. Engineered like a car.</p>
         <nav className="flex flex-wrap gap-x-6 gap-y-2">
           <Link href="/blog" className="hover:text-silver">Journal</Link>
-          <Link href="/legal/privacy" className="hover:text-silver">Privacy</Link>
+          <Link href="/legal/impressum" className="hover:text-silver">Impressum</Link>
+          <Link href="/legal/datenschutz" className="hover:text-silver">Datenschutz</Link>
           <Link href="/legal/cookies" className="hover:text-silver">Cookies</Link>
         </nav>
       </div>
