@@ -10,6 +10,7 @@ import { ConversionBay } from "@/components/sections/ConversionBay";
 import { ComponentDossier } from "@/components/sections/ComponentDossier";
 import { Timeline } from "@/components/sections/Timeline";
 import { LogoMarquee } from "@/components/sections/LogoMarquee";
+import { Faq } from "@/components/sections/Faq";
 import { SplitCTA } from "@/components/sections/SplitCTA";
 
 export const metadata: Metadata = {
@@ -29,6 +30,7 @@ export default function Home() {
       <ComponentDossier />
       <Timeline />
       <LogoMarquee />
+      <Faq />
       <SplitCTA />
       <Footer />
     </main>

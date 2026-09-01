@@ -5,6 +5,7 @@ import { FunnelTracker } from "@/components/FunnelTracker";
 import { EditBridge } from "@/components/EditBridge";
 import { CookieConsent } from "@/components/CookieConsent";
 import { SITE_URL } from "@/lib/site";
+import { getSiteMeta } from "@/lib/site-meta";
 import "./globals.css";
 
 const archivo = Archivo({
@@ -41,20 +42,23 @@ export const metadata: Metadata = {
   },
 };
 
+const siteMeta = getSiteMeta();
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "Organization",
       "@id": `${SITE_URL}/#organization`,
-      name: "GravityCart",
+      name: siteMeta.organization.name,
+      description: siteMeta.organization.description,
       url: SITE_URL,
     },
     {
       "@type": "WebSite",
       "@id": `${SITE_URL}/#website`,
       url: SITE_URL,
-      name: "GravityCart",
+      name: siteMeta.organization.name,
       publisher: { "@id": `${SITE_URL}/#organization` },
     },
   ],

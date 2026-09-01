@@ -1,0 +1,28 @@
+{
+  "organization": {
+    "name": "GravityCart",
+    "description": "GravityCart is a CE-certified, automotive-engineered gravity cart — dimensioned tolerances, proven brake components and mono-material recyclability, convertible between wheels and skis in under five minutes."
+  },
+  "faq": [
+    {
+      "q": "Is GravityCart CE certified?",
+      "a": "Yes. The JM-001 chassis is CE certified and ISO 9001 verified, meeting the same safety and quality standards applied to automotive-grade vehicles sold in Europe."
+    },
+    {
+      "q": "How long does it take to switch between wheels and skis?",
+      "a": "Under five minutes. The wheel assembly and ski assembly bolt to the identical chassis mount point, so one JM-001 frame covers both summer and winter riding without buying a second frame."
+    },
+    {
+      "q": "What is the fork made from?",
+      "a": "A forged fork, built to automotive-tolerance geometry and shared across both the wheel and ski configurations, so steering feel stays identical between seasons."
+    },
+    {
+      "q": "What brakes does GravityCart use?",
+      "a": "Dual-piston Shimano hydraulic disc brakes — the same braking hardware proven on downhill mountain bikes for a decade, not a prototype component developed for marketing."
+    },
+    {
+      "q": "What does a complete GravityCart setup cost?",
+      "a": "The JM-001 All-Season Chassis is €3,499 and ships with the wheel assembly mounted. Add the Ski Assembly Winter Kit for €799, or buy the Wheel Assembly Summer Kit on its own for €899. A Precision Maintenance Kit for seasonal conversion and upkeep is €129."
+    }
+  ]
+}
