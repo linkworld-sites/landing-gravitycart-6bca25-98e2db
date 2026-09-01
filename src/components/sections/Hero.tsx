@@ -50,6 +50,14 @@ export function Hero() {
           style={{ y: copyY, opacity: copyOpacity }}
         >
           <div className="max-w-[720px]">
+            <div className="mb-5 w-32 overflow-hidden rounded-lg border border-white/15 shadow-xl sm:w-40 md:w-48">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/proof/chassis-onsite.webp"
+                alt="The GravityCart JM-001 chassis, parked on an alpine trail"
+                className="aspect-[4/3] w-full object-cover"
+              />
+            </div>
             <p className="mb-6 font-mono text-[11px] uppercase tracking-[0.22em] text-white/70">
               JM-001 &middot; All-Season Gravity Cart
             </p>
