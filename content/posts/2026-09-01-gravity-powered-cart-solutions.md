@@ -8,7 +8,7 @@ A gravity-powered cart carries no engine, no battery and no motor. It converts e
 
 ## The chassis is the product
 
-The GravityCart JM-001 is the complete platform: a CE-certified chassis with a forged fork, priced at €3,499 and shipped with the wheel assembly already mounted. CE certification means the chassis has been assessed against the same category of safety requirements that govern equipment sold into the EU market — it is a compliance mark, not a slogan. The forged fork is the same manufacturing choice used in automotive and motorcycle steering components, because forging produces a denser, more fatigue-resistant part than casting, at the exact point where a gravity cart takes its steering loads.
+The GravityCart JM-001 is the complete platform: an automotive-engineered chassis with a forged fork, priced at €3,499 and shipped with the wheel assembly already mounted. The chassis is dimensioned to automotive tolerances rather than workshop guesses, so the geometry that keeps the cart tracking straight at speed doesn't shift from unit to unit. The forged fork is the same manufacturing choice used in automotive and motorcycle steering components, because forging produces a denser, more fatigue-resistant part than casting, at the exact point where a gravity cart takes its steering loads.
 
 ## Braking is where a gravity vehicle earns trust
 
@@ -22,4 +22,4 @@ The engineering decision that makes GravityCart an all-season platform is the mo
 
 Braking hardware and chassis tolerances only stay safe if they are maintained to spec. The Precision Maintenance Kit (€129) supplies brake fluid, sealed bearing grease and torque-spec hardware for seasonal conversion and routine upkeep — the same categories of consumable an automotive service interval covers, sized for a gravity cart's actual duty cycle.
 
-That is the short version of what a gravity-powered cart solution should be: a certified chassis, brakes proven under real braking loads, and a conversion system that lets one frame do a full year's riding. See the complete platform at [GravityCart](https://e65f587b.run.linkworld.ai).
+That is the short version of what a gravity-powered cart solution should be: a chassis built to automotive tolerances, brakes proven under real braking loads, and a conversion system that lets one frame do a full year's riding. See the complete platform at [GravityCart](https://e65f587b.run.linkworld.ai).

@@ -10,7 +10,7 @@ import { SITE_URL } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Catalog — Chassis, Wheel & Ski Kits",
   description:
-    "Spec the GravityCart JM-series chassis and its interchangeable wheel and ski kits — CE-certified, automotive-engineered components with published tolerances.",
+    "Spec the GravityCart JM-series chassis and its interchangeable wheel and ski kits — automotive-engineered components with published tolerances.",
   alternates: { canonical: "/product" },
 };
 
@@ -57,8 +57,8 @@ export default async function ProductPage() {
         </h1>
         <p className="mt-4 max-w-2xl text-white/70">
           Order the complete JM-001 chassis, or add the wheel and ski assemblies on
-          their own — every part ships to a published tolerance with CE certification,
-          so the fit is guaranteed the day it arrives.
+          their own — every part ships to a published tolerance, so the fit is
+          guaranteed the day it arrives.
         </p>
         <div className="mt-8">
           <CatalogCTA label="Start with the JM-001 chassis" href="#catalog" />

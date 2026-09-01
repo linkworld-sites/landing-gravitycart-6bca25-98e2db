@@ -16,7 +16,7 @@ import { SplitCTA } from "@/components/sections/SplitCTA";
 export const metadata: Metadata = {
   title: "Engineered Like a Car. Built for the Mountain.",
   description:
-    "GravityCart is a CE-certified, automotive-engineered gravity cart — dimensioned tolerances, proven brake components and mono-material recyclability, convertible between wheels and skis in under five minutes.",
+    "The GravityCart JM-001 all-season chassis (€3,499) ships with the wheel assembly mounted and converts to the ski assembly in under five minutes — forged fork, dual-piston brakes, automotive-grade tolerances.",
   alternates: { canonical: "/" },
 };
 

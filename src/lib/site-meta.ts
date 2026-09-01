@@ -6,11 +6,20 @@ export interface FaqEntry {
   a: string;
 }
 
+export interface ProductMeta {
+  sku: string;
+  name: string;
+  price: string;
+  currency: string;
+  description: string;
+}
+
 export interface SiteMeta {
   organization: {
     name: string;
     description: string;
   };
+  products: ProductMeta[];
   faq: FaqEntry[];
 }
 

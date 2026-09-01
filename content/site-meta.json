@@ -1,12 +1,42 @@
 {
   "organization": {
     "name": "GravityCart",
-    "description": "GravityCart is a CE-certified, automotive-engineered gravity cart — dimensioned tolerances, proven brake components and mono-material recyclability, convertible between wheels and skis in under five minutes."
+    "description": "GravityCart is an automotive-engineered gravity cart — dimensioned tolerances, proven brake components and mono-material recyclability, convertible between wheels and skis in under five minutes."
   },
+  "products": [
+    {
+      "sku": "JM-001",
+      "name": "GravityCart JM-001 — All-Season Chassis",
+      "price": "3499.00",
+      "currency": "EUR",
+      "description": "The complete automotive-engineered gravity cart: forged fork and dual-piston brake calipers, shipped with the wheel assembly mounted. Converts to the winter ski assembly in under five minutes."
+    },
+    {
+      "sku": "WHEEL-KIT",
+      "name": "Wheel Assembly — Summer Kit",
+      "price": "899.00",
+      "currency": "EUR",
+      "description": "Forged-aluminum wheel assembly with dual-piston brake calipers for warm-weather descents. Bolts to the JM-001 chassis mount point in under five minutes."
+    },
+    {
+      "sku": "SKI-KIT",
+      "name": "Ski Assembly — Winter Kit",
+      "price": "799.00",
+      "currency": "EUR",
+      "description": "CNC-milled ski assembly for snow and ice descents, interchanging with the wheel assembly at the identical chassis mount point."
+    },
+    {
+      "sku": "MAINT-KIT",
+      "name": "Precision Maintenance Kit",
+      "price": "129.00",
+      "currency": "EUR",
+      "description": "Brake fluid, sealed bearing grease and torque-spec hardware for seasonal chassis conversion and routine upkeep."
+    }
+  ],
   "faq": [
     {
-      "q": "Is GravityCart CE certified?",
-      "a": "Yes. The JM-001 chassis is CE certified and ISO 9001 verified, meeting the same safety and quality standards applied to automotive-grade vehicles sold in Europe."
+      "q": "What's included in the Precision Maintenance Kit?",
+      "a": "Brake fluid, sealed bearing grease and torque-spec hardware for seasonal chassis conversion and routine upkeep — priced at €129."
     },
     {
       "q": "How long does it take to switch between wheels and skis?",

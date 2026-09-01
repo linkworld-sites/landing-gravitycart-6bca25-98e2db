@@ -4,6 +4,11 @@ import type { Metadata } from "next";
 import { getPost, getPosts } from "@/lib/posts";
 import { SITE_URL } from "@/lib/site";
 
+const POST_PRODUCT_MENTIONS: Record<string, string[]> = {
+  "2026-09-01-gravity-powered-cart-solutions": ["JM-001", "WHEEL-KIT", "SKI-KIT", "MAINT-KIT"],
+  "2026-09-01-descent-engineered-carts": ["JM-001", "WHEEL-KIT", "SKI-KIT"],
+};
+
 export function generateStaticParams() {
   return getPosts().map((p) => ({ slug: p.slug }));
 }
@@ -32,6 +37,8 @@ export default async function BlogPost({
   const post = getPost(slug);
   if (!post) notFound();
 
+  const mentionedSkus = POST_PRODUCT_MENTIONS[slug];
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -39,6 +46,10 @@ export default async function BlogPost({
     description: post.description || undefined,
     datePublished: post.date || undefined,
     url: `${SITE_URL}/blog/${slug}`,
+    publisher: { "@id": `${SITE_URL}/#organization` },
+    mentions: mentionedSkus?.map((sku) => ({
+      "@id": `${SITE_URL}/product#${sku.toLowerCase()}`,
+    })),
   };
 
   return (
