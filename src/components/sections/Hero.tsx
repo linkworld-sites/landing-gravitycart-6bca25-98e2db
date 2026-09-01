@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { VideoLoop } from "@/components/VideoLoop";
 
-const LINES = ["ENGINEERED LIKE A CAR.", "BUILT FOR THE MOUNTAIN."];
+const LINES = ["ENGINEERED", "LIKE A CAR.", "BUILT FOR", "THE MOUNTAIN."];
 
 function HeroLine({ text, index }: { text: string; index: number }) {
   return (
@@ -53,7 +53,7 @@ export function Hero() {
             <p className="mb-6 font-mono text-[11px] uppercase tracking-[0.22em] text-white/70">
               JM-001 &middot; All-Season Gravity Cart
             </p>
-            <h1 className="font-display font-display-expanded text-[13vw] font-extrabold uppercase leading-[0.92] text-white sm:text-[9vw] md:text-[6.4vw] lg:text-[5.2rem]">
+            <h1 className="font-display font-display-expanded text-[clamp(1.875rem,7vw,4.75rem)] font-extrabold uppercase leading-[1.02] text-white">
               {LINES.map((line, i) => (
                 <HeroLine key={line} text={line} index={i} />
               ))}
@@ -61,7 +61,7 @@ export function Hero() {
             <motion.p
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.9 }}
+              transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 1.1 }}
               className="mt-6 max-w-md font-sans text-base text-white/85 md:text-lg"
             >
               CE-certified. Automotive-engineered. One frame, dimensioned to
