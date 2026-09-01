@@ -1,7 +1,13 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { getPosts } from "@/lib/posts";
 
-export const metadata = { title: "Blog" };
+export const metadata: Metadata = {
+  title: "Journal",
+  description:
+    "Engineering notes, build stories and field reports from GravityCart — the automotive-grade gravity cart.",
+  alternates: { canonical: "/blog" },
+};
 
 /**
  * Blog index — lists every post from content/posts/. Ships with neutral

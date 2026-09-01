@@ -4,6 +4,7 @@ import { SmoothScroll } from "@/components/SmoothScroll";
 import { FunnelTracker } from "@/components/FunnelTracker";
 import { EditBridge } from "@/components/EditBridge";
 import { CookieConsent } from "@/components/CookieConsent";
+import { SITE_URL } from "@/lib/site";
 import "./globals.css";
 
 const archivo = Archivo({
@@ -28,14 +29,46 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "GravityCart — Engineered Like a Car. Built for the Mountain.",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "GravityCart — Engineered Like a Car. Built for the Mountain.",
+    template: "%s — GravityCart",
+  },
   description:
     "GravityCart is a CE-certified, automotive-engineered gravity cart — dimensioned tolerances, proven brake components and mono-material recyclability, convertible between wheels and skis in under five minutes.",
+  verification: {
+    google: "WlJ66mw7eszwjs5WXh-HAJ_3n22gXQA1yf23ABf0enE",
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
+      name: "GravityCart",
+      url: SITE_URL,
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      url: SITE_URL,
+      name: "GravityCart",
+      publisher: { "@id": `${SITE_URL}/#organization` },
+    },
+  ],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${archivo.variable} ${plexMono.variable} ${inter.variable}`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="bg-ink font-sans text-silver antialiased">
         <FunnelTracker />
         <EditBridge />

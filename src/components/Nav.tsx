@@ -7,6 +7,8 @@ const LINKS = [
   { href: "#bay", label: "Conversion Bay" },
   { href: "#dossier", label: "Parts Dossier" },
   { href: "#story", label: "Story" },
+  { href: "/product", label: "Shop" },
+  { href: "/checkout", label: "Cart" },
   { href: "/blog", label: "Journal" },
 ];
 
