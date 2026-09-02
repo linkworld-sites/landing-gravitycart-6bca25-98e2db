@@ -2,7 +2,6 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { VideoLoop } from "@/components/VideoLoop";
 
 const LINES = ["ENGINEERED", "LIKE A CAR.", "BUILT FOR", "THE MOUNTAIN."];
 
@@ -27,15 +26,21 @@ export function Hero() {
 
   const copyY = useTransform(scrollYProgress, [0, 1], [0, -40]);
   const copyOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
-  const videoScale = useTransform(scrollYProgress, [0, 1], [1, 1.05]);
+  const heroScale = useTransform(scrollYProgress, [0, 1], [1, 1.05]);
 
   return (
     <>
-      <VideoLoop
-        src="/videos/hero.mp4"
+      <motion.div
         className="fixed inset-0 z-0 h-screen w-screen overflow-hidden"
-        style={{ scale: videoScale }}
-      />
+        style={{ scale: heroScale }}
+      >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/images/proof/chassis-onsite.webp"
+          alt="The GravityCart JM-001 chassis, parked on an alpine trail"
+          className="h-full w-full object-cover"
+        />
+      </motion.div>
       <section ref={ref} className="relative z-10 flex h-screen flex-col justify-center">
         {/* Engineered veil: dark on the copy side, clearing by ~65% width so the chassis stays visible on the right. */}
         <div
@@ -64,27 +69,20 @@ export function Hero() {
               transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 1.1 }}
               className="mt-6 max-w-md font-sans text-base text-white/85 md:text-lg"
             >
-              CE-certified. Automotive-engineered. One frame, dimensioned to
+              Automotive-engineered. One frame, dimensioned to
               automotive tolerances, converts between wheels and skis in
               under five minutes — proven brakes, not prototypes.
             </motion.p>
           </div>
         </motion.div>
 
-        {/* CE certification stamp */}
+        {/* Certification note */}
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1.2 }}
           className="absolute bottom-10 left-6 z-10 flex items-center gap-3 md:left-10"
         >
-          <div className="liquid-glass flex h-14 w-14 items-center justify-center rounded-full border border-white/30 font-mono text-[10px] font-medium uppercase leading-none tracking-widest text-white">
-            <span className="text-center">
-              CE
-              <br />
-              CERT.
-            </span>
-          </div>
           <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-white/60">
             ISO&nbsp;9001
             <br />

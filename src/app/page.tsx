@@ -9,6 +9,7 @@ import { NumbersBand } from "@/components/sections/NumbersBand";
 import { ConversionBay } from "@/components/sections/ConversionBay";
 import { ComponentDossier } from "@/components/sections/ComponentDossier";
 import { Timeline } from "@/components/sections/Timeline";
+import { FieldProof } from "@/components/sections/FieldProof";
 import { LogoMarquee } from "@/components/sections/LogoMarquee";
 import { Faq } from "@/components/sections/Faq";
 import { SplitCTA } from "@/components/sections/SplitCTA";
@@ -29,6 +30,7 @@ export default function Home() {
       <ConversionBay />
       <ComponentDossier />
       <Timeline />
+      <FieldProof />
       <LogoMarquee />
       <Faq />
       <SplitCTA />
